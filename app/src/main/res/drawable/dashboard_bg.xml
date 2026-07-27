@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="800dp"
+    android:viewportWidth="400"
+    android:viewportHeight="800">
+    
+    <!-- Background Gradient -->
+    <path
+        android:fillColor="#0F041A"
+        android:pathData="M0,0h400v800h-400z" />
+        
+    <!-- Hexagonal Grid (Simplified dots) -->
+    <path
+        android:fillColor="#2D1B4D"
+        android:pathData="M50,50m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0 M150,50m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0 M250,50m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0 M350,50m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0
+                        M100,150m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0 M200,150m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0 M300,150m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0
+                        M50,250m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0 M150,250m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0 M250,250m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0 M350,250m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0" />
+
+    <!-- Subtle Top Glow -->
+    <path
+        android:fillColor="#1A9333EA"
+        android:pathData="M200,-100 m-300,0 a300,300 0,1 1,600 0 a300,300 0,1 1,-600 0" />
+</vector>

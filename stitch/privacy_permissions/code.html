@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ScanMatrix - Privacy &amp; Permissions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-container": "#00b680",
+                        "on-tertiary": "#003825",
+                        "surface-dim": "#0c1321",
+                        "tertiary-fixed-dim": "#45dfa4",
+                        "tertiary-fixed": "#68fcbf",
+                        "on-primary-fixed-variant": "#004881",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#a2c9ff",
+                        "on-secondary-container": "#003b42",
+                        "surface-container": "#19202e",
+                        "surface": "#0c1321",
+                        "secondary": "#54d8e8",
+                        "primary": "#a2c9ff",
+                        "surface-container-low": "#151b2a",
+                        "inverse-primary": "#0060a9",
+                        "background": "#0c1321",
+                        "on-background": "#dce2f6",
+                        "on-tertiary-fixed": "#002114",
+                        "surface-container-highest": "#2e3544",
+                        "surface-bright": "#323949",
+                        "surface-container-high": "#232a39",
+                        "on-primary-container": "#003866",
+                        "inverse-surface": "#dce2f6",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#02aebe",
+                        "outline": "#8a919d",
+                        "on-surface": "#dce2f6",
+                        "on-secondary": "#00363c",
+                        "primary-fixed": "#d3e4ff",
+                        "on-surface-variant": "#c0c7d4",
+                        "on-secondary-fixed-variant": "#004f57",
+                        "outline-variant": "#404752",
+                        "on-tertiary-container": "#003f2a",
+                        "tertiary": "#45dfa4",
+                        "surface-container-lowest": "#070e1c",
+                        "inverse-on-surface": "#2a3040",
+                        "on-primary-fixed": "#001c38",
+                        "surface-tint": "#a2c9ff",
+                        "on-secondary-fixed": "#001f23",
+                        "primary-container": "#4da3ff",
+                        "secondary-fixed": "#91f1ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(35, 42, 57, 0.4);
+            backdrop-filter: blur(20px);
+        }
+        body {
+            background-color: #0c1321;
+            color: #dce2f6;
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased select-none">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#0c1321] dark:bg-[#0c1321]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4da3ff]" data-icon="shield">shield</span>
+<h1 class="text-xl font-black text-[#4da3ff] tracking-widest uppercase font-['Space_Grotesk']">ScanMatrix</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-[#4da3ff]/20 hover:opacity-80 transition-opacity cursor-pointer">
+<img alt="User Profile" data-alt="minimalist professional user avatar silhouette on a geometric blue background with futuristic UI elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRN88I6t9M3jcD6supVxy5T6qetZCTFJNL4WX7UqRzunTS1peHQnhGhjWptsrsTGkJQHTQv-AQzlhoBrhaYTwwVd3VBpF86NHcTTbPhxTH9ov4PgI7NXTx4T_hVWSSl4Z1SrWAygw7Hn_FUVbVM7frXsBgkdgPQS_i99YwjsqKZCmw_MwHKSx5fhMw3ktwc8Mik0A0TLNLz2hQoEUpbNd54GZbrWH1PdPmHoM-9lSxUvrZ5B_i5X1usAXkBWxE5clKBJp8y0koKPBu"/>
+</div>
+</header>
+<main class="pt-20 pb-32 px-6">
+<!-- Hero Section: Privacy Health -->
+<section class="mb-10 mt-4 relative overflow-hidden rounded-3xl bg-surface-container-lowest p-8 border border-outline-variant/10">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 blur-[80px] rounded-full"></div>
+<div class="relative z-10 flex justify-between items-center">
+<div>
+<p class="font-label text-sm text-secondary uppercase tracking-widest mb-1">Privacy Status</p>
+<h2 class="font-headline text-4xl font-bold text-on-surface tracking-tight">84% Secure</h2>
+<p class="text-on-surface-variant mt-2 max-w-[200px] text-sm">3 apps require immediate permission review.</p>
+</div>
+<!-- Custom Security Gauge -->
+<div class="relative w-24 h-24">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-tertiary" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="40" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="verified_user">verified_user</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter Chips -->
+<section class="mb-8">
+<h3 class="font-headline text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="filter_list">filter_list</span>
+                Active Monitors
+            </h3>
+<div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+<button class="flex-shrink-0 px-5 py-2.5 rounded-xl bg-primary/20 border border-primary/30 text-primary font-label text-xs font-semibold flex items-center gap-2 shadow-[0_0_15px_rgba(162,201,255,0.2)]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                    All Sensitive
+                </button>
+<button class="flex-shrink-0 px-5 py-2.5 rounded-xl bg-surface-variant/40 border border-outline-variant/10 text-on-surface-variant font-label text-xs font-medium hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="camera">camera</span>
+                    Camera
+                </button>
+<button class="flex-shrink-0 px-5 py-2.5 rounded-xl bg-surface-variant/40 border border-outline-variant/10 text-on-surface-variant font-label text-xs font-medium hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="mic">mic</span>
+                    Microphone
+                </button>
+<button class="flex-shrink-0 px-5 py-2.5 rounded-xl bg-surface-variant/40 border border-outline-variant/10 text-on-surface-variant font-label text-xs font-medium hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                    Location
+                </button>
+</div>
+</section>
+<!-- App Permissions List -->
+<section class="space-y-4">
+<div class="flex justify-between items-end mb-4">
+<h3 class="font-headline text-lg font-bold">App Ecosystem</h3>
+<span class="font-label text-xs text-on-surface-variant">Showing 3 Risks</span>
+</div>
+<!-- Adobe Express Card -->
+<div class="group relative bg-surface-container-low rounded-2xl p-4 transition-all hover:scale-[1.01] active:scale-95 duration-150">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-[#FF0000]/10 flex items-center justify-center overflow-hidden">
+<img alt="Adobe Express" data-alt="stylized red and white professional design app icon logo for Adobe Express on a dark tech background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSe95vQS-LnNsewr6Bq7tvDZ_axybfszP_8bdI-U8jaCEQ_OpZU0uA1rhGwEdKNtzv70dadKnQXqujrB_20qIO_TpJCk7YGAp8bmkBVnt2YTu59yxRchZIggkRySGM5bfNLq-3cc5XYXbRx55y6k71OZ-QRF_VwYfonji7fVwaLn1Q1J2kmpVWoUy10HdhCdMFMRvVsdSHp6MEH_wuUMt92L7Wky4sR2bplZ7zlqjAo5Mu6bjSVIS_vEIMu2grnFc661iF4AwlDogZ"/>
+</div>
+<div>
+<h4 class="font-body font-bold text-on-surface text-base">Adobe Express</h4>
+<p class="font-label text-[11px] text-on-surface-variant uppercase tracking-wide">23 Permissions active</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-error/10 text-error uppercase">Moderate Risk</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-xs text-on-surface-variant" data-icon="photo_library">photo_library</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant" data-icon="folder_open">folder_open</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Airtel Card -->
+<div class="group relative bg-surface-container-low rounded-2xl p-4 transition-all hover:scale-[1.01] active:scale-95 duration-150">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-[#E41C1C]/10 flex items-center justify-center overflow-hidden">
+<img alt="Airtel" data-alt="red and white circular telecommunications company logo for Airtel on a minimal dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEeynXmGWgDKv9i1BIIV8HKkpx08PUzl1V51AzLuAfJQ67GHYFiurvVc3GEOc2XNpvUvZOvmzSekmJARcQxHQB1XZreA3jsJQWVp2t95Ve8YSqZwCTQNHitCzNioMjx9nvC0F1QLGl32ZWCihQjLnbGz3APe7YWd9QXGKRv9OVVuDXUPwonx22GSY9ERq8IFJFF_AE-RSenicMBgmLWGadGfzZCRSbbgkh7pbTzGz66UciVo0LdEJsizVGwqQga4svvhXLIoNoJAgC"/>
+</div>
+<div>
+<h4 class="font-body font-bold text-on-surface text-base">Airtel</h4>
+<p class="font-label text-[11px] text-on-surface-variant uppercase tracking-wide">62 Permissions active</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-error text-on-error uppercase">High Risk</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-xs text-on-surface-variant" data-icon="call">call</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant" data-icon="sms">sms</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant" data-icon="location_on">location_on</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Amazon Alexa Card (Asymmetric Design Element) -->
+<div class="group relative bg-surface-container-high rounded-3xl p-6 border-l-4 border-secondary/50 shadow-xl overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-secondary/5 to-transparent"></div>
+<div class="flex items-start justify-between relative z-10">
+<div class="flex gap-5">
+<div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center p-3 border border-secondary/20 shadow-inner">
+<img alt="Amazon Alexa" data-alt="cyan circular voice assistant icon logo for Amazon Alexa with glowing futuristic data stream effects" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWy07FzIa7Jjnqcayh1aTztMSPYlhJdWoeE5gQ4RpQhClUnJTZF22UJwS7wkN6C4V8fRwd12u5mYv9STRu3K3NiUZBspHl-TGhHYO1S2ESBqN4iOojPnDb02OdeUM8HRA4zda9HQ3iUhxIguKFwQNE_0aX-rYFV8_jBhimYGeVzy1whdtt9530-rTQvJOpE2yrHwUsaT47VULmCCC7pw4-PSCHhMvbN70zyAJ3JuMMAP-88QH4X2H88whTQ1TmVaYJYCnGCiXtJlI8"/>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="font-headline font-bold text-on-surface text-xl">Amazon Alexa</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label text-xs text-secondary font-bold">117 Permissions</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label text-xs text-error font-medium">Critical Threat</span>
+</div>
+</div>
+</div>
+<button class="p-2 rounded-full bg-surface-variant/40 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="arrow_forward_ios">arrow_forward_ios</span>
+</button>
+</div>
+<div class="mt-6 grid grid-cols-2 gap-3">
+<div class="bg-surface-container-lowest/50 rounded-xl p-3 border border-outline-variant/10">
+<div class="flex items-center gap-2 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-sm" data-icon="mic">mic</span>
+<span class="font-label text-[10px] font-bold uppercase">Background Audio</span>
+</div>
+<p class="text-[10px] leading-tight text-on-surface-variant/70 italic">Monitoring active 24/7</p>
+</div>
+<div class="bg-surface-container-lowest/50 rounded-xl p-3 border border-outline-variant/10">
+<div class="flex items-center gap-2 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-sm" data-icon="wifi_find">wifi_find</span>
+<span class="font-label text-[10px] font-bold uppercase">Network Probe</span>
+</div>
+<p class="text-[10px] leading-tight text-on-surface-variant/70 italic">Scans local IoT devices</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Insights Banner -->
+<section class="mt-10 p-6 rounded-2xl bg-gradient-to-br from-primary-container/20 to-secondary-container/20 border border-primary-container/10">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<h5 class="font-headline font-bold text-on-background">Auto-Revoke active</h5>
+<p class="font-body text-sm text-on-surface-variant mt-1">ScanMatrix automatically hibernates permissions for apps unused for 30+ days.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#151b2a]/80 backdrop-blur-xl dark:bg-[#151b2a]/80 rounded-t-3xl shadow-[0_-8px_32px_rgba(77,163,255,0.08)]">
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-[#4da3ff] transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#4da3ff]/10 text-[#67e8f9] rounded-xl px-3 py-1 scale-95 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter">Permissions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-[#4da3ff] transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="hub">hub</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter">Network</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-[#4da3ff] transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="radar">radar</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter">Scan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-[#4da3ff] transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="cloud_sync">cloud_sync</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter">Connects</span>
+</a>
+</nav>
+<!-- Contextual FAB (Only on Home/Dashboard, but rendering for visual completeness if primary action is Scan) -->
+<!-- Suppressed based on "Settings/Details" rule, but we keep the canvas focused on the content -->
+</body></html>

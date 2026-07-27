@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ScanMatrix - Security Scanner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-container": "#00b680",
+            "on-tertiary": "#003825",
+            "surface-dim": "#0c1321",
+            "tertiary-fixed-dim": "#45dfa4",
+            "tertiary-fixed": "#68fcbf",
+            "on-primary-fixed-variant": "#004881",
+            "error-container": "#93000a",
+            "on-error": "#690005",
+            "primary-fixed-dim": "#a2c9ff",
+            "on-secondary-container": "#003b42",
+            "surface-container": "#19202e",
+            "surface": "#0c1321",
+            "secondary": "#54d8e8",
+            "primary": "#a2c9ff",
+            "surface-container-low": "#151b2a",
+            "inverse-primary": "#0060a9",
+            "background": "#0c1321",
+            "on-background": "#dce2f6",
+            "on-tertiary-fixed": "#002114",
+            "surface-container-highest": "#2e3544",
+            "surface-bright": "#323949",
+            "surface-container-high": "#232a39",
+            "on-primary-container": "#003866",
+            "inverse-surface": "#dce2f6",
+            "error": "#ffb4ab",
+            "secondary-container": "#02aebe",
+            "outline": "#8a919d",
+            "on-surface": "#dce2f6",
+            "on-secondary": "#00363c",
+            "primary-fixed": "#d3e4ff",
+            "on-surface-variant": "#c0c7d4",
+            "on-secondary-fixed-variant": "#004f57",
+            "outline-variant": "#404752",
+            "on-tertiary-container": "#003f2a",
+            "tertiary": "#45dfa4",
+            "surface-container-lowest": "#070e1c",
+            "inverse-on-surface": "#2a3040",
+            "on-primary-fixed": "#001c38",
+            "surface-tint": "#a2c9ff",
+            "on-secondary-fixed": "#001f23",
+            "primary-container": "#4da3ff",
+            "secondary-fixed": "#91f1ff"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Manrope"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    
+    @keyframes pulse-scan {
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+    
+    @keyframes data-flow {
+      0% { transform: translateY(0); opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translateY(-40px); opacity: 0; }
+    }
+
+    @keyframes rotate-slow {
+      from { transform: rotateX(45deg) rotateZ(0deg); }
+      to { transform: rotateX(45deg) rotateZ(360deg); }
+    }
+
+    .hex-grid {
+      perspective: 1000px;
+    }
+
+    .hex-container {
+      transform: rotateX(45deg);
+      transform-style: preserve-3d;
+      animation: rotate-slow 20s linear infinite;
+    }
+
+    .data-fragment {
+      animation: data-flow 2s infinite linear;
+    }
+    
+    .glass-panel {
+      backdrop-filter: blur(20px);
+      background: rgba(35, 42, 57, 0.4);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30 min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#0c1321] dark:bg-[#0c1321]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4da3ff] dark:text-[#a2c9ff]" style="font-variation-settings: 'FILL' 1;">shield</span>
+<h1 class="text-xl font-black text-[#4da3ff] tracking-widest uppercase font-['Space_Grotesk']">ScanMatrix</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-outline-variant hover:opacity-80 transition-opacity cursor-pointer">
+<img alt="User Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzB4XyUZAlYE7ttTENkzBf83NoBmo_s46mEnITSXB_UNJ0QHCfAVGbGw0nPF0t-HqVhnWIHtDclCiEKx2SAmkBB_-3MRGXxXNjF5Tf5uqL2Df_457mkoUDoChmeVOx7cHjuWnTNYHXyJ7G02qQZd3KXSsh9ZQpOeGghS-sVtnqQAX3b1l2WanmIdo1kXc22aPxHnapms896FXHY9xdagaJSRUcKEnIk3owBlPSTwqro2Atr9AmSc8yZtzR4FamBcbB5FinluN64iV8"/>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Data Core Section -->
+<div class="relative flex flex-col items-center justify-center mb-12">
+<div class="relative w-72 h-72 flex items-center justify-center hex-grid overflow-visible">
+<!-- 3D Geometric Grid Simulation -->
+<div class="hex-container relative w-64 h-64 flex items-center justify-center">
+<!-- Hexagonal Ring Layers -->
+<div class="absolute w-full h-full border-4 border-primary/20 rounded-[2rem] rotate-0 animate-[pulse-scan_3s_ease-in-out_infinite]"></div>
+<div class="absolute w-48 h-48 border-2 border-secondary/30 rounded-[1.5rem] rotate-45 animate-[pulse-scan_4s_ease-in-out_infinite]"></div>
+<div class="absolute w-32 h-32 border border-tertiary/40 rounded-[1rem] -rotate-12 animate-[pulse-scan_2.5s_ease-in-out_infinite]"></div>
+<!-- Central Data Core -->
+<div class="relative z-20 w-16 h-16 rounded-xl bg-gradient-to-br from-primary-container to-primary flex items-center justify-center shadow-[0_0_60px_rgba(77,163,255,0.6)] border border-white/20">
+<span class="material-symbols-outlined text-on-primary-container text-3xl animate-pulse" style="font-variation-settings: 'FILL' 1;">dataset</span>
+</div>
+</div>
+<!-- Floating Data Particles -->
+<div class="absolute inset-0 z-0 pointer-events-none">
+<div class="data-fragment absolute top-1/4 left-1/4 w-1 h-1 bg-secondary rounded-full shadow-[0_0_8px_cyan]" style="animation-delay: 0.2s;"></div>
+<div class="data-fragment absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_blue]" style="animation-delay: 0.8s;"></div>
+<div class="data-fragment absolute bottom-1/4 left-1/2 w-1 h-1 bg-tertiary rounded-full shadow-[0_0_8px_green]" style="animation-delay: 1.5s;"></div>
+<div class="data-fragment absolute top-1/3 right-1/4 w-1 h-1 bg-secondary rounded-full shadow-[0_0_8px_cyan]" style="animation-delay: 0.5s;"></div>
+</div>
+</div>
+<div class="mt-8 text-center">
+<h2 class="font-headline text-3xl font-bold tracking-tight text-on-surface">Data Analysis</h2>
+<p class="text-on-surface-variant font-label text-sm uppercase tracking-widest mt-1">Probing structural integrity...</p>
+</div>
+</div>
+<!-- Scan Actions (Bento Style) -->
+<div class="grid grid-cols-2 gap-4 mb-10">
+<button class="flex flex-col items-start p-5 rounded-xl bg-gradient-to-br from-primary-container to-primary text-on-primary-container group transition-transform active:scale-95 duration-150">
+<span class="material-symbols-outlined mb-4 text-3xl">bolt</span>
+<span class="font-headline font-bold text-lg">Quick Scan</span>
+<span class="text-xs opacity-80 font-medium">Est. 45 Seconds</span>
+</button>
+<button class="flex flex-col items-start p-5 rounded-xl bg-surface-container-high border border-outline-variant/10 hover:bg-surface-bright transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined mb-4 text-3xl text-secondary">database</span>
+<span class="font-headline font-bold text-lg text-on-surface">Full Device</span>
+<span class="text-xs text-on-surface-variant font-medium">Deep analysis</span>
+</button>
+</div>
+<!-- Real-time Results Glass Card -->
+<div class="space-y-4">
+<div class="flex justify-between items-end px-1">
+<h3 class="font-headline font-bold text-xl text-on-surface">Threat Analysis</h3>
+<span class="font-label text-xs text-secondary font-bold uppercase tracking-tighter">Live Log</span>
+</div>
+<div class="glass-panel rounded-2xl overflow-hidden">
+<!-- Result Item: Danger -->
+<div class="flex items-center gap-4 p-4 border-b border-outline-variant/5 bg-error/5">
+<div class="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-sm font-bold text-error truncate">Trojan.Agent.Generic</h4>
+<span class="text-[10px] font-black px-1.5 py-0.5 rounded bg-error text-on-error uppercase">Critical</span>
+</div>
+<p class="text-[11px] text-on-surface-variant font-mono truncate">/sys/bin/hidden/.payload_x86</p>
+</div>
+</div>
+<!-- Result Item: Warning -->
+<div class="flex items-center gap-4 p-4 border-b border-outline-variant/5">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-sm font-bold text-on-surface truncate">Unsigned APK detected</h4>
+<span class="text-[10px] font-black px-1.5 py-0.5 rounded bg-secondary text-on-secondary uppercase">Low</span>
+</div>
+<p class="text-[11px] text-on-surface-variant font-mono truncate">/downloads/beta_test_v2.apk</p>
+</div>
+</div>
+<!-- Result Item: Success/Clean -->
+<div class="flex items-center gap-4 p-4 border-b border-outline-variant/5">
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-sm font-bold text-on-surface truncate">Registry Integrity</h4>
+<span class="text-[10px] font-black px-1.5 py-0.5 rounded bg-tertiary text-on-tertiary uppercase">Secure</span>
+</div>
+<p class="text-[11px] text-on-surface-variant font-mono truncate">/root/etc/hosts.verified</p>
+</div>
+</div>
+<!-- Result Item: Success/Clean -->
+<div class="flex items-center gap-4 p-4">
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-sm font-bold text-on-surface truncate">Network Headers</h4>
+<span class="text-[10px] font-black px-1.5 py-0.5 rounded bg-tertiary text-on-tertiary uppercase">Secure</span>
+</div>
+<p class="text-[11px] text-on-surface-variant font-mono truncate">/proc/net/arp_tables</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#151b2a]/80 backdrop-blur-xl dark:bg-[#151b2a]/80 shadow-[0_-8px_32px_rgba(77,163,255,0.08)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-[#4da3ff] transition-colors active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-[#4da3ff] transition-colors active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter mt-1">Permissions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-[#4da3ff] transition-colors active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter mt-1">Network</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#4da3ff]/10 text-[#67e8f9] rounded-xl px-3 py-1 active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dataset</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter mt-1 text-[#4da3ff]">Scan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-[#4da3ff] transition-colors active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined">cloud_sync</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter mt-1">Connects</span>
+</a>
+</nav>
+</body></html>

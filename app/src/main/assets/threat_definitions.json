@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "last_updated": "2024-03-04T12:00:00Z",
+  "malicious_apk_hashes": [
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  ],
+  "malicious_packages": [
+    "com.example.malwaresimulator",
+    "com.suspicious.tracker",
+    "com.nasty.spyware",
+    "net.adware.installer"
+  ],
+  "bad_domains": [
+    "tracker.suspicious.net",
+    "malware.example.com",
+    "ads.test",
+    "pixel.test",
+    "phishing.badsite.org"
+  ],
+  "risky_permission_sets": [
+    [
+      "android.permission.CAMERA",
+      "android.permission.RECORD_AUDIO",
+      "android.permission.READ_SMS",
+      "android.permission.INTERNET"
+    ]
+  ],
+  "suspicious_file_patterns": [
+    ".dex",
+    ".jar",
+    "hidden_apk"
+  ],
+  "malicious_pdf_keywords": [
+    "eval(",
+    "/JavaScript",
+    "/Launch",
+    "/EmbeddedFile"
+  ]
+}

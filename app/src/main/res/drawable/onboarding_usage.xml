@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    
+    <!-- Background circle -->
+    <path
+        android:fillColor="#1A9333EA"
+        android:pathData="M100,100m-90,0a90,90 0,1 1,180 0a90,90 0,1 1,-180 0" />
+        
+    <!-- Magnifying glass handle -->
+    <path
+        android:strokeColor="#9333EA"
+        android:strokeWidth="12"
+        android:strokeLineCap="round"
+        android:pathData="M135,135 L170,170" />
+        
+    <!-- Magnifying glass head -->
+    <path
+        android:strokeColor="#9333EA"
+        android:strokeWidth="8"
+        android:pathData="M95,95m-55,0a55,55 0,1 1,110 0a55,55 0,1 1,-110 0" />
+        
+    <!-- App shapes representing monitoring -->
+    <path
+        android:fillColor="#D8B4FE"
+        android:pathData="M70,70h20v20h-20z M110,70h15v15h-15z M70,110h15v15h-15z" />
+        
+    <!-- Sparkles -->
+    <path
+        android:fillColor="#A855F7"
+        android:pathData="M140,40l3,8l8,3l-8,3l-3,8l-3,-8l-8,-3l8,-3z" />
+</vector>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    
+    <!-- Background circle -->
+    <path
+        android:fillColor="#1A9333EA"
+        android:pathData="M100,100m-90,0a90,90 0,1 1,180 0a90,90 0,1 1,-180 0" />
+        
+    <!-- Folder -->
+    <path
+        android:fillColor="#9333EA"
+        android:pathData="M40,60 L90,60 L100,75 L160,75 L160,140 L40,140 Z" />
+        
+    <!-- Shield on Folder -->
+    <path
+        android:fillColor="#A855F7"
+        android:pathData="M100,90 L130,100 L130,130 C130,150 115,160 100,165 C85,160 70,150 70,130 L70,100 Z" />
+        
+    <!-- Magnifying Glass icon overlay -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M95,120 m-12,0 a12,12 0,1 1,24 0 a12,12 0,1 1,-24 0 M105,130 L115,140" />
+</vector>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ScanMatrix | Network Monitor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-container": "#00b680",
+                        "on-tertiary": "#003825",
+                        "surface-dim": "#0c1321",
+                        "tertiary-fixed-dim": "#45dfa4",
+                        "tertiary-fixed": "#68fcbf",
+                        "on-primary-fixed-variant": "#004881",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#a2c9ff",
+                        "on-secondary-container": "#003b42",
+                        "surface-container": "#19202e",
+                        "surface": "#0c1321",
+                        "secondary": "#54d8e8",
+                        "primary": "#a2c9ff",
+                        "surface-container-low": "#151b2a",
+                        "inverse-primary": "#0060a9",
+                        "background": "#0c1321",
+                        "on-background": "#dce2f6",
+                        "on-tertiary-fixed": "#002114",
+                        "surface-container-highest": "#2e3544",
+                        "surface-bright": "#323949",
+                        "surface-container-high": "#232a39",
+                        "on-primary-container": "#003866",
+                        "inverse-surface": "#dce2f6",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#02aebe",
+                        "outline": "#8a919d",
+                        "on-surface": "#dce2f6",
+                        "on-secondary": "#00363c",
+                        "primary-fixed": "#d3e4ff",
+                        "on-surface-variant": "#c0c7d4",
+                        "on-secondary-fixed-variant": "#004f57",
+                        "outline-variant": "#404752",
+                        "on-tertiary-container": "#003f2a",
+                        "tertiary": "#45dfa4",
+                        "surface-container-lowest": "#070e1c",
+                        "inverse-on-surface": "#2a3040",
+                        "on-primary-fixed": "#001c38",
+                        "surface-tint": "#a2c9ff",
+                        "on-secondary-fixed": "#001f23",
+                        "primary-container": "#4da3ff",
+                        "secondary-fixed": "#91f1ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .glass-card {
+            background: rgba(35, 42, 57, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#151b2a]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4da3ff]" data-icon="shield">shield</span>
+<h1 class="text-xl font-black text-[#4da3ff] tracking-widest uppercase font-['Space_Grotesk']">ScanMatrix</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-[#4da3ff]/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a professional man with neutral expression, studio lighting, high tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcEDZJmz8dxP9GtQVbyLNX3E6h6lx8kC5VI_l5RYRIzRqyED5HR4s7NQOCYSySvExUulEZWb7bD9cmJDuwgPQVn0IaFIWGFRqZELZ3wyPD5jQyldz-dBXiE6saOckng3gOPOsQmd86tedfVZpj7Rz4H8Pj5xPfcMfNOSfTG2LZX41Hf9GjLuydmtCGvbMN0kotJr6OtLLT62V6GOHV0M0KWGO2ZrnHc36KHvG67SftdYc_9d45OR1BjL6EC3u-YnwtlCcaDxR-iw41"/>
+</div>
+</header>
+<main class="pt-20 pb-32 px-4 max-w-5xl mx-auto space-y-6">
+<!-- Hero Section: Connection Status -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+<div class="md:col-span-8 bg-surface-container-low p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl text-secondary" data-icon="hub">hub</span>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<p class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Security Engine</p>
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight mb-4">Connection Monitor</h2>
+<div class="flex items-center gap-3">
+<span class="flex h-3 w-3 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+</span>
+<span class="font-label font-semibold text-secondary uppercase tracking-widest text-sm">Active &amp; Guarded</span>
+</div>
+</div>
+<!-- Modern Toggle Switch -->
+<div class="flex items-center gap-4 bg-surface-container-high p-4 rounded-xl">
+<span class="font-label text-sm font-medium">Monitor ON</span>
+<div class="w-14 h-7 bg-primary rounded-full relative p-1 cursor-pointer">
+<div class="w-5 h-5 bg-on-primary rounded-full absolute right-1"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Kinetic Gauge Card -->
+<div class="md:col-span-4 bg-surface-container p-6 rounded-xl flex flex-col items-center justify-center space-y-4">
+<div class="relative w-32 h-32">
+<svg class="w-full h-full" viewbox="0 0 100 100">
+<circle class="text-surface-container-highest" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-width="8"></circle>
+<circle cx="50" cy="50" fill="none" r="45" stroke="url(#gradient-cyan)" stroke-dasharray="210" stroke-dashoffset="40" stroke-linecap="round" stroke-width="8"></circle>
+<defs>
+<lineargradient id="gradient-cyan" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:#4da3ff"></stop>
+<stop offset="100%" style="stop-color:#54d8e8"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline text-2xl font-black">98</span>
+<span class="text-[10px] font-label text-on-surface-variant uppercase">Threat Score</span>
+</div>
+</div>
+<p class="text-xs text-center font-body text-on-surface-variant leading-relaxed">Network integrity is currently at optimal levels.</p>
+</div>
+</section>
+<!-- Live Connection Log -->
+<section class="space-y-4">
+<div class="flex items-center justify-between px-2">
+<h3 class="font-headline text-xl font-bold tracking-tight">Live Traffic Analysis</h3>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-label font-bold uppercase text-on-surface-variant">Real-time</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-[10px] font-label font-bold uppercase">UDP/TCP</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<!-- Allowed Connection -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between border-l-4 border-tertiary">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="dns">dns</span>
+</div>
+<div>
+<p class="font-label text-sm font-bold text-on-surface">browser.api.facebook.com</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] font-label text-on-surface-variant">HTTPS • Port 443</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-[10px] font-label text-on-surface-variant">Trusted Domain</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="hidden md:block text-[10px] font-label font-bold text-tertiary uppercase">Allowed</span>
+</div>
+</div>
+<!-- Blocked Connection -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between border-l-4 border-error">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-error" data-icon="dangerous">dangerous</span>
+</div>
+<div>
+<p class="font-label text-sm font-bold text-error">track.suspicious.net</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] font-label text-error/80">P2P • Port 8080</span>
+<span class="w-1 h-1 rounded-full bg-error/30"></span>
+<span class="text-[10px] font-label text-error/80">Blacklisted Source</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error text-xl" data-icon="cancel" style="font-variation-settings: 'FILL' 1;">cancel</span>
+<span class="hidden md:block text-[10px] font-label font-bold text-error uppercase">Blocked</span>
+</div>
+</div>
+<!-- Neutral Connection -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between border-l-4 border-outline-variant">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="language">language</span>
+</div>
+<div>
+<p class="font-label text-sm font-bold text-on-surface">google.com</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] font-label text-on-surface-variant">HTTPS • Port 443</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-[10px] font-label text-on-surface-variant">Verified Certificate</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant text-xl" data-icon="verified_user">verified_user</span>
+<span class="hidden md:block text-[10px] font-label font-bold text-on-surface-variant uppercase">Encrypted</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Network Stats Bento Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="speed">speed</span>
+<p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Bandwidth</p>
+<h4 class="font-headline text-lg font-bold">12.4 Mbps</h4>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="router">router</span>
+<p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Nodes Active</p>
+<h4 class="font-headline text-lg font-bold">24 Nodes</h4>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-error text-2xl" data-icon="security_update_warning">security_update_warning</span>
+<p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Threats Today</p>
+<h4 class="font-headline text-lg font-bold">03 Intercepted</h4>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-tertiary text-2xl" data-icon="lock_reset">lock_reset</span>
+<p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">SSL Uptime</p>
+<h4 class="font-headline text-lg font-bold">100%</h4>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#151b2a]/80 backdrop-blur-xl shadow-[0_-8px_32px_rgba(77,163,255,0.08)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-[#4da3ff] transition-colors active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-[#4da3ff] transition-colors active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="security">security</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter">Permissions</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#4da3ff]/10 text-[#67e8f9] rounded-xl px-3 py-1 active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="hub">hub</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter">Network</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-[#4da3ff] transition-colors active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="radar">radar</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter">Scan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-[#4da3ff] transition-colors active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="cloud_sync">cloud_sync</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-tighter">Connects</span>
+</a>
+</nav>
+<!-- Contextual FAB (Hidden on Mobile for this specific Screen as per guidelines if redundant) -->
+<button class="fixed bottom-28 right-6 w-14 h-14 bg-gradient-to-br from-primary-container to-primary text-on-primary-container rounded-xl shadow-2xl flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="bolt">bolt</span>
+</button>
+</body></html>

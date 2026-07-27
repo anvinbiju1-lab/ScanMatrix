@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    
+    <!-- Background circle -->
+    <path
+        android:fillColor="#1A9333EA"
+        android:pathData="M100,100m-90,0a90,90 0,1 1,180 0a90,90 0,1 1,-180 0" />
+        
+    <!-- Success Shield -->
+    <path
+        android:fillColor="#43A047"
+        android:pathData="M100,40 L150,60 L150,110 C150,145 125,170 100,175 C75,170 50,145 50,110 L50,60 Z" />
+        
+    <!-- Large Checkmark -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="10"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M75,110 L95,130 L130,90" />
+        
+    <!-- Sparkles for success -->
+    <path
+        android:fillColor="#4ADE80"
+        android:pathData="M165,65l2,5l5,2l-5,2l-2,5l-2,-5l-5,-2l5,-2z M35,135l2,5l5,2l-5,2l-2,5l-2,-5l-5,-2l5,-2z" />
+</vector>

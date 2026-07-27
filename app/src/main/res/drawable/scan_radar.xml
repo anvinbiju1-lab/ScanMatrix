@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    
+    <!-- Outer Ring -->
+    <path
+        android:strokeColor="#9333EA"
+        android:strokeWidth="2"
+        android:pathData="M100,100 m-90,0 a90,90 0,1 1,180 0 a90,90 0,1 1,-180 0" />
+    
+    <!-- Middle Ring -->
+    <path
+        android:strokeColor="#A855F7"
+        android:strokeAlpha="0.6"
+        android:strokeWidth="1"
+        android:pathData="M100,100 m-60,0 a60,60 0,1 1,120 0 a60,60 0,1 1,-120 0" />
+        
+    <!-- Inner Ring -->
+    <path
+        android:strokeColor="#D8B4FE"
+        android:strokeAlpha="0.4"
+        android:strokeWidth="1"
+        android:pathData="M100,100 m-30,0 a30,30 0,1 1,60 0 a30,30 0,1 1,-60 0" />
+        
+    <!-- Radar Sweep Line -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M100,100 L100,15" />
+        
+    <!-- Center Dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M100,100m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+</vector>
